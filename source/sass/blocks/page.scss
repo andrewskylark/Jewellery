@@ -1,0 +1,18 @@
+.page {
+  position: relative;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Poppins", "Tahoma", sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  color: $text-main;
+
+  @media screen and (min-width: $desktop-width) {
+    max-width: $max-width;
+    box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.2);
+  }
+}

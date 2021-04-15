@@ -1,0 +1,25 @@
+$main: #a87b62;
+$main-hover: #db9b79;
+$main-active: #6e4d3b;
+$text-main: #1d1613;
+$text-accent: #9b9997;
+$text-light: #ffffff;
+$bg: #f0eae4;
+$bg-footer: #000000;
+$bg-modal: rgba(29, 22, 19, 0.25);
+
+$desktop-width: 1024px;
+$tablet-width: 768px;
+$mobile-width: 320px;
+$max-width: 1366px;
+
+@mixin reset-text {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

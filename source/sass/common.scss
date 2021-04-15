@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+// firefox fix: removes red border on inputs:required
+input:required {
+  box-shadow: none
+}
+// fixes border rounding on IOS
+input,
+textarea,
+button {
+  appearance: none;
+  border-radius: 0;
+}
+// resets 1em padding left & right on IOS
+button {
+  padding: initial;
+}
+
+.input-invalid {
+  outline: rgba(255, 0, 0, 0.6) solid 2px;
+}
