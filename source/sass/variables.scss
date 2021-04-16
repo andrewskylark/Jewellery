@@ -13,6 +13,9 @@ $tablet-width: 768px;
 $mobile-width: 320px;
 $max-width: 1366px;
 
+$header_top_nav_opened: 206px;
+$header_top_nav_opened_mob: 162px;
+
 @mixin reset-text {
   margin: 0;
   padding: 0;

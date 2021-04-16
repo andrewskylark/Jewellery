@@ -16,3 +16,8 @@
     box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.2);
   }
 }
+
+.page--locked {
+  position: fixed;
+  width: 100vw;
+}

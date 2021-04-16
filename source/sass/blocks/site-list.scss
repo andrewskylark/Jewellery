@@ -1,0 +1,138 @@
+.site-list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  padding-left: 45px;
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-left: 15px;
+  }
+}
+
+.site-list__item {
+  width: fit-content;
+  margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    position: relative;
+    margin-bottom: 21px;
+    padding-top: 0;
+
+    &--last {
+      margin-bottom: 40px;
+    }
+
+    &--login {
+      margin-top: 43px;
+    }
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    &--login {
+      margin-top: 33px;
+    }
+  }
+
+  &--small {
+    display: none;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      display: block;
+    }
+  }
+}
+
+.nav--opened .site-list__item {
+  @media screen and (max-width: $desktop-width - 1) {
+    // width: 100%;
+    // min-height: 60px;
+    // text-align: left;
+  }
+}
+
+.site-list__link {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-main;
+  animation: 0.3s all ease 0s;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $text-light;
+  }
+
+  &--small {
+    @media screen and (max-width: $desktop-width - 1) {
+      display: block;
+      font-size: 18px;
+      line-height: 130%;
+      color: rgba($text-light, 0.75);
+    }
+  }
+
+  &--login {
+    @media screen and (max-width: $desktop-width - 1) {
+      display: block;
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $text-main;
+    transition: all ease 0.4s;
+    opacity: 0;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      background-color: rgba($text-light, 0.75);
+    }
+  }
+
+  &[href]:hover::after,
+  &[href]:focus::after {
+    opacity: 1;
+    width: 100%;
+  }
+
+  &[href]:active {
+    opacity: 0.7;
+  }
+}
+
+@media screen and (max-width: $desktop-width - 1) {
+  .nav--closed .site-list__item {
+    display: none;
+  }
+
+  .nav--no-js .site-list__item {
+    display: block;
+  }
+}
+
+

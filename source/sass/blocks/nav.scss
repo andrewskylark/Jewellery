@@ -1,0 +1,75 @@
+.nav {
+  display: flex;
+  border-top: 1px solid #F6F5F4;
+  border-bottom: 1px solid #F6F5F4;
+  min-height: 61px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+.nav--opened .nav__list {
+  @media screen and (max-width: $desktop-width - 1) {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 0;
+    right: 0;
+    background-color: $main;
+    z-index: 1;
+  }
+}
+
+.nav.nav--closed:not(.nav--no-js) {
+  @media screen and (max-width: $desktop-width - 1) {
+    display: none;
+  }
+}
+
+.nav.nav--opened:not(.nav--no-js) {
+  @media screen and (max-width: $desktop-width - 1) {
+    position: fixed;
+    width: 100%;
+    top: $header_top_nav_opened;
+    overflow-y: scroll;
+    min-height: calc(100vh - #{$header_top_nav_opened});
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    top: $header_top_nav_opened_mob;
+    min-height: calc(100vh - #{$header_top_nav_opened_mob});
+  }
+}
+
+.nav--closed .nav__list {
+  @media screen and (max-width: $desktop-width - 1) {
+    display: none;
+    // position: absolute;
+    // max-height: 100%;
+    // top: 0;
+    // right: 0;
+  }
+}
+
+.nav--no-js .nav__list {
+  @media screen and (max-width: $desktop-width - 1) {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 572px;
+    padding: 45px;
+    padding-top: 16px;
+    background-color: $main;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    min-height: 522px;
+    padding: 16px;
+  }
+}

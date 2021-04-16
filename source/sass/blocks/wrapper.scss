@@ -1,0 +1,25 @@
+.wrapper {
+  width: 86.1%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 1300px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    width: 88%;
+
+    &--header {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    width: 90.7%;
+
+    &--header {
+      width: 100%;
+    }
+  }
+}
