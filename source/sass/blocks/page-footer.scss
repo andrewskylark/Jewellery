@@ -1,0 +1,206 @@
+.page-footer {
+  min-height: 338px;
+  max-width: $max-width;
+  padding: 100px 0;
+  font-weight: 500;
+  line-height: 130%;
+  font-size: 16px;
+  color: $text-light;
+  background-color: $bg-footer;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    min-height: 446px;
+    padding-right: 100px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    min-height: 773px;
+    padding-top: 60px;
+    padding-right: 0;
+  }
+
+  a {
+    color: $text-light;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $text-light;
+      transition: all ease 0.4s;
+      opacity: 0;
+    }
+
+    &[href]:hover::after,
+    &[href]:focus::after {
+      opacity: 1;
+      width: 100%;
+    }
+
+    &[href]:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.page-footer__sign_up {
+  @media screen and (max-width: $desktop-width - 1) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  // @media screen and (max-width: $tablet-width - 1) {
+  //   margin-bottom: 50px;
+  // }
+
+  h2 {
+    @include reset-text;
+    margin-bottom: 25px;
+    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+
+    @media screen and (max-width: $tablet-width) {
+      width: 75%;
+    }
+  }
+
+  p {
+    @include reset-text;
+    font-size: 16px;
+    line-height: 130%;
+    color: $text-accent;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $tablet-width) {
+      width: 80%;
+    }
+  }
+}
+
+.page-footer__form {
+  position: relative;
+  min-width: 500px;
+
+  @media screen and (max-width: 1150px) {
+    min-width: 416px;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    min-width: auto;
+  }
+
+  input {
+    position: relative;
+    min-height: 40px;
+    width: 100%;
+    padding-right: 115px;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: normal;
+    color: $text-accent;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $text-light;
+    transition: all ease 0.6s;
+
+    &:hover,
+    &:focus {
+      color: $text-light;
+      box-shadow: inset 0 -6px 10px -3px rgba($text-light, 0.5);
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: normal;
+      transition: all ease 0.4s;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder  {
+      color: $text-light;
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      color: $text-light;
+
+      &:hover,
+      &:focus {
+      box-shadow: 0 0 3px 3px rgba($text-light, 0.5);
+      }
+    }
+    // @media screen and (max-width: $tablet-width - 1) {
+    //   min-width: auto;
+    // }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding-right: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: $text-light;
+    border: none;
+    background-color: transparent;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all ease 0.4s;
+
+    svg {
+      --icon_arrow: white;
+    }
+
+    &:hover,
+    &:focus {
+
+      svg {
+        animation: 1s bounce_right infinite;
+      }
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.page-footer__nav {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    width: 66%;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.page-footer__social {
+  display: flex;
+  flex-direction: column;
+
+  // @media screen and (max-width: $desktop-width - 1) {
+
+  // }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    flex-direction: row;
+  }
+}

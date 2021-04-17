@@ -41,8 +41,8 @@ button {
   appearance: none;
   border-radius: 0;
 }
-// resets 1em padding left & right on IOS
-button {
+// resets 1em padding left & right on IOS for buttons with no text
+button.ios_fix {
   padding: initial;
 }
 

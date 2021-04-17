@@ -3,6 +3,12 @@
   margin-left: auto;
   margin-right: auto;
 
+  &--footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   @media screen and (max-width: 1300px) {
     width: 90%;
   }

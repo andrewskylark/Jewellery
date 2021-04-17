@@ -1,0 +1,77 @@
+.page-main__title {
+  width: 100%;
+  min-height: 463px;
+  padding-top: 181px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
+   url("../img/bg_main_dt.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
+     url("../img/bg_main_dt@2x.jpg");
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
+     url("../img/bg_main_tab.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
+       url("../img/bg_main_tab@2x.jpg");
+    }
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 189px;
+    background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
+     url("../img/bg_main_mob.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
+       url("../img/bg_main_mob@2x.jpg");
+    }
+  }
+
+  p {
+    @include reset-text;
+    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
+    color: $text-light;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      margin-right: 17px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      margin-right: 0;
+    }
+
+    &:first-of-type {
+      margin-bottom: -7px;
+      font-weight: bold;
+      font-size: 45px;
+      line-height: 130%;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        font-size: 38px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      font-style: italic;
+      font-weight: normal;
+      font-size: 38px;
+      line-height: 130%;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        font-size: 34px;
+      }
+    }
+  }
+}
