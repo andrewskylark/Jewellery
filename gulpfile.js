@@ -15,6 +15,9 @@ let svgstore = require(`gulp-svgstore`);
 let posthtml = require(`gulp-posthtml`);
 let include = require(`posthtml-include`);
 let del = require(`del`);
+let webpack = require(`webpack`);
+let webpackStream = require(`webpack-stream`);
+let webpackConfig = require(`./webpack.config.js`);
 
 gulp.task(`css`, function () {
   return gulp.src(`source/sass/style.scss`)
@@ -41,7 +44,7 @@ gulp.task(`server`, function () {
   gulp.watch(`source/sass/**/*.{scss,sass}`, gulp.series(`css`));
   gulp.watch(`source/img/icon_*.svg`, gulp.series(`sprite`, `html`, `refresh`));
   gulp.watch(`source/*.html`, gulp.series(`html`, `refresh`));
-  gulp.watch(`source/js/*.js`, gulp.series(`js`, `refresh`));
+  gulp.watch(`source/js/*.js`, gulp.series(`webpack`, `refresh`));
 });
 
 gulp.task(`refresh`, function (done) {
@@ -88,11 +91,19 @@ gulp.task(`js`, function () {
       .pipe(server.stream());
 });
 
+gulp.task(`webpack`, (done) => {
+  gulp.src(`source/js/*.js`)
+      .pipe(webpackStream(webpackConfig), webpack)
+      .pipe(gulp.dest(`build/js`))
+      .pipe(server.stream());
+  done();
+});
+
 gulp.task(`copy`, function () {
   return gulp.src([
     `source/fonts/**/*.{woff,woff2}`,
     `source/img/**`,
-    `source/js/**`,
+    // `source/js/**`,
     `source//*.ico`,
     `source//*.png`
   ], {
@@ -105,5 +116,5 @@ gulp.task(`clean`, function () {
   return del(`build`);
 });
 
-gulp.task(`build`, gulp.series(`clean`, `copy`, `css`, `sprite`, `html`));
+gulp.task(`build`, gulp.series(`clean`, `copy`, `css`, `sprite`, `webpack`, `html`));
 gulp.task(`start`, gulp.series(`build`, `server`));

@@ -1,13 +1,5 @@
 'use strict';
-// (() => {
-//   const noJsElems = document.querySelectorAll(`[class*="--no-js"]`);
-//   if (noJsElems) {
-//     noJsElems.forEach((elem) => {
-//       elem.classList.remove(`[class*="--no-js"]`);
-//     });
-//   }
-// })();
-const ESC_KEY = `Escape`;
+// const ESC_KEY = `Escape`;
 
 (() => {
   const page = document.querySelector(`.page`);
@@ -15,17 +7,17 @@ const ESC_KEY = `Escape`;
   const navToggle = page.querySelector(`.page-header__toggle`);
   const headerTop = page.querySelector(`.page-header__top`);
 
-  const isEscEvt = (evt, action) => {
-    if (evt.key === ESC_KEY) {
-      action();
-    }
-  };
+  // const isEscEvt = (evt, action) => {
+  //   if (evt.key === window.consts.ESC_KEY) {
+  //     action();
+  //   }
+  // };
   const onMenuEscPress = (evt) => {
-    isEscEvt(evt, closeNav);
+    window.consts.isEscEvt(evt, closeNav);
   };
-  const onElemEnableJs = (elemClass) => {
-    document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
-  };
+  // const onElemEnableJs = (elemClass) => {
+  //   document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
+  // };
   const openNav = () => {
     nav.classList.remove(`nav--closed`);
     nav.classList.add(`nav--opened`);
@@ -44,8 +36,8 @@ const ESC_KEY = `Escape`;
     document.removeEventListener(`keydown`, closeNav);
   };
 
-  onElemEnableJs(`page-header__top`);
-  onElemEnableJs(`nav`);
+  // onElemEnableJs(`page-header__top`);
+  // onElemEnableJs(`nav`);
 
   if (navToggle) {
     navToggle.addEventListener(`click`, () => {

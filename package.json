@@ -5,7 +5,13 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.5.x",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
     "browser-sync": "2.26.x",
+    "eslint": "4.16.0",
+    "eslint-config-htmlacademy": "0.4.x",
     "gulp": "4.0.x",
     "gulp-csso": "^3.0.1",
     "gulp-imagemin": "^5.0.3",
@@ -21,8 +27,9 @@
     "posthtml-include": "^1.2.0",
     "stylelint": "9.10.x",
     "stylelint-config-htmlacademy": "0.1.x",
-    "eslint": "4.16.0",
-    "eslint-config-htmlacademy": "0.4.x"
+    "webpack": "5.28.0",
+    "webpack-cli": "4.5.0",
+    "webpack-stream": "6.1.2"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
