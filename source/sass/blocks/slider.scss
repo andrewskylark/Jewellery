@@ -10,13 +10,13 @@
     width: 885px;
   }
 
-  @media screen and (max-width: $desktop-width) {
+  @media screen and (max-width: $desktop-width - 1) {
     width: 678px;
     padding-top: 139px;
     // width: 88.283vw;
   }
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (max-width: $tablet-width - 1) {
     width: 290px;
     padding-top: 129px;
     // width: 88.283vw;
@@ -48,7 +48,7 @@
     margin-right: 15px;
   }
 
-  @media screen and (max-width: $desktop-width) {
+  @media screen and (max-width: $desktop-width - 1) {
     // width: 42.188vw;
     width: 324px;
     margin-right: 30px;
@@ -62,7 +62,7 @@
     }
   }
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (max-width: $tablet-width - 1) {
     width: 130px;
   }
 
@@ -89,13 +89,13 @@
     object-fit: cover;
     margin-bottom: 17px;
 
-    @media screen and (max-width: $desktop-width) {
+    @media screen and (max-width: $desktop-width - 1) {
       // width: 42.188vw;
       width: 324px;
       height: 340px;
     }
 
-    @media screen and (max-width: $tablet-width) {
+    @media screen and (max-width: $tablet-width - 1) {
       width: 130px;
       height: 136px;
       margin-bottom: 12px;
@@ -121,7 +121,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  @media screen and (max-width: $desktop-width) {
+  @media screen and (max-width: $desktop-width - 1) {
     svg {
       width: 36px;
       height: 15px;

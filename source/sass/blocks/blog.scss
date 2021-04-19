@@ -1,0 +1,206 @@
+// .blog {
+
+// }
+
+.blog__list {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    grid-gap: 40px;
+  }
+}
+
+.blog__item {
+  width: 100%;
+  min-height: 300px;
+  background-color: $bg;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 285px auto;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    background-size: 50% auto;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    min-height: 512px;
+    padding-top: 256px;
+    background-position: top;
+    background-size: 100% auto;
+  }
+
+  &:nth-child(2) {
+    @media screen and (max-width: $desktop-width - 1) and (min-width: $tablet-width) {
+    background-position: right;
+
+    .blog__article {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+    // @media screen and (max-width: $tablet-width - 1) {
+    //   background-position: top;
+    // }
+  }
+
+  &:nth-child(3) {
+    // grid-row: 1 / span 2;
+    // grid-column: 2;
+    // // padding-top: 330px;
+    // background-position: center;
+    // background-size: cover;
+
+    // .blog__article {
+    //   min-height: 300px;
+    // }
+
+    @media screen and (min-width: $desktop-width) {
+      grid-row: 1 / span 2;
+      grid-column: 2;
+      padding-top: 330px;
+      background-position: center;
+      background-size: cover;
+
+      .blog__article {
+        min-height: 300px;
+      }
+    }
+
+    @media screen and (max-width: $desktop-width - 1){
+      grid-row: auto;
+      grid-column: auto;
+    }
+
+    @media screen and (max-width: $desktop-width - 1) and (min-width: $tablet-width) {
+      background-position: -1px 0px;
+      background-size: 59% 143%;
+    }
+  }
+
+  &--care {
+    background-image: url("../img/blog_care.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/blog_care@2x.jpg");
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      background-image: url("../img/blog_care_tab.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/blog_care_tab@2x.jpg");
+      }
+    }
+  }
+
+  &--power {
+    background-image: url("../img/blog_power.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/blog_power@2x.jpg");
+    }
+
+    @media screen and (max-width: $desktop-width - 1) and (min-width: $tablet-width) {
+      background-size: 57% 135%;
+    }
+
+    @media screen and (max-width: $tablet-width - 1){
+      background-size: 114% auto;
+      background-position: -41px -46px;
+    }
+  }
+
+  &--trends {
+    background-image: url("../img/blog_trends.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/blog_trends@2x.jpg");
+    }
+
+    @media screen and (max-width: $desktop-width - 1) and (min-width: $tablet-width) {
+      background-position: -1px 0px;
+      background-size: 59% 143%;
+    }
+
+    @media screen and (max-width: 380px){
+      background-size: 118% 71%;
+      background-position: 0 0;
+    }
+  }
+}
+
+.blog__article {
+  width: 50%;
+  height: 100%;
+  padding: 67px 10% 20px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: $bg;
+
+  @media screen and (max-width: 1200px) {
+    padding: 67px 5% 20px;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding: 67px 12.5% 20px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    width: 100%;
+    padding: 45px 20.5% 15px;
+  }
+
+  h3 {
+    @include reset-text;
+    margin-bottom: 40px;
+    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+  }
+
+  time {
+    margin-bottom: 13px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $text-accent;
+  }
+
+  a {
+    width: fit-content;
+    padding-bottom: 5px;
+    font-family: "Poppins", "Tahoma", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: $text-main;
+    border-bottom: 1px solid $main;
+    transition: all ease 0.6s;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      padding-bottom: 5px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $main;
+    }
+
+    &:active {
+      opacity: 0.6;
+      color: $main-active;
+    }
+  }
+}
