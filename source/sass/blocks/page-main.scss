@@ -10,6 +10,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
 
   @media (min-resolution: 2dppx) {
     background-image: linear-gradient(rgba($main, 0.7), rgba($main, 0.7)),
@@ -71,6 +72,64 @@
 
       @media screen and (max-width: $tablet-width - 1) {
         font-size: 34px;
+      }
+    }
+  }
+}
+
+.page-main__slider {
+  padding-top: 120px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding-top: 70px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 60px;
+  }
+
+  h2 {
+    @include reset-text;
+    min-height: 90px;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
+    font-size: 34px;
+    line-height: 130%;
+    color: $text-main;
+    transform: translateX(-50%);
+    z-index: 15;
+
+    // @media screen and (max-width: $desktop-width - 1) {
+    //   min-height: 85px;
+    // }
+
+    a {
+      font-family: "Poppins", "Tahoma", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: $text-main;
+      border-bottom: 1px solid $main;
+      transition: all ease 0.6s;
+
+      @media screen and (max-width: $desktop-width - 1) {
+        padding-bottom: 5px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $main;
+      }
+
+      &:active {
+        opacity: 0.6;
+        color: $main-active;
       }
     }
   }

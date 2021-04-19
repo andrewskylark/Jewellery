@@ -9,6 +9,7 @@ module.exports = {
     `./source/js/consts.js`,
     `./source/js/utils.js`,
     `./source/js/menu.js`,
+    `./source/js/slider.js`,
     `./source/js/accordion.js`
   ],
   output: {
