@@ -99,20 +99,25 @@
   const accBtns = document.querySelectorAll(`.accordion-btn`);
 
   if (accBtns) {
+    const activeElHandler = (el, className) => {
+      if (el.classList.contains(`${className}--active`)) {
+        el.classList.remove(`${className}--active`);
+      } else {
+        let active = document.querySelector(`.${className}--active`);
+        if (active) {
+          active.classList.remove(`${className}--active`);
+        }
+        el.classList.add(`${className}--active`);
+      }
+    };
+
     for (let btn of accBtns) {
 
       btn.addEventListener(`click`, () => {
         let panel = btn.nextElementSibling;
 
-        if (panel.classList.contains(`accordion-content--active`)) {
-          panel.classList.remove(`accordion-content--active`);
-        } else {
-          let active = document.querySelector(`.accordion-content--active`);
-          if (active) {
-            active.classList.remove(`accordion-content--active`);
-          }
-          panel.classList.add(`accordion-content--active`);
-        }
+        activeElHandler(panel, `accordion-content`);
+        activeElHandler(btn, `accordion-btn`);
       });
     }
   }
@@ -242,6 +247,7 @@
 
   onElemEnableJs(`page-header__top`);
   onElemEnableJs(`nav`);
+  onElemEnableJs(`accordion-container`);
 })();
 
 
@@ -407,6 +413,20 @@
     window.addEventListener(`resize`, window.utils.debounce(() => {
       initiateSlider();
     }));
+
+    // window.addEventListener(`resize`, (event) => {
+    //   switch (event.currentTarget.innerWidth) {
+    //     case 768:
+    //       console.log(`Start`);
+    //       break;
+    //     case 1024:
+    //       console.log(`1024`);
+    //       break;
+
+    //   }
+    // console.log(event.currentTarget.innerWidth);
+    // initiateSlider();
+    // });
   }
 })();
 

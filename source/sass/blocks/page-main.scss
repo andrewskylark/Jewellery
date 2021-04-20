@@ -192,3 +192,125 @@
     }
   }
 }
+
+.page-main__faq {
+  padding: 120px 7.5% 20px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding: 70px 0 20px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 60px;
+  }
+
+  h2 {
+    @include reset-text;
+    margin-bottom: 48px;
+    text-align: center;
+    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
+    font-size: 34px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: $text-main;
+
+    @media screen and (max-width: $tablet-width - 1) {
+      margin-bottom: 49px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      margin-bottom: 28px;
+    }
+  }
+
+  ul {
+    @include reset-list;
+  }
+
+  li {
+    min-height: 112px;
+    position: relative;
+    padding: 43px 41% 30px 43px;
+    border: 1px solid $main;
+    border-bottom: none;
+
+    &:last-child {
+      border-bottom: 1px solid $main;
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      padding: 43px 10% 17px 47px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      min-height: 83px;
+      padding: 17px 19% 4px 25px;
+
+      &:nth-of-type(2) h3 {
+        width: 73%;
+      }
+
+      &:nth-of-type(3) h3 {
+        width: 87%;
+      }
+
+      &:nth-of-type(4) h3 {
+        width: 101%;
+      }
+    }
+  }
+
+  h3 {
+    @include reset-text;
+    margin-bottom: 10px;
+    font-family: "Poppins", "Tahoma", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      margin-bottom: 27px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      width: 88%;
+      margin-bottom: 14px;
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+
+  p {
+    @include reset-text;
+    padding-left: 7px;
+    font-size: 16px;
+    line-height: 130%;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      padding-left: 0;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      font-size: 14px;
+      line-height: 143%;
+    }
+
+    span {
+      width: 4px;
+      height: 4px;
+      display: inline-block;
+
+      @media screen and (max-width: $desktop-width - 1) {
+        width: 2px;
+      }
+    }
+  }
+
+  br {
+    display: none;
+
+    @media screen and (max-width: $tablet-width - 1) {
+      display: block;
+    }
+  }
+}
