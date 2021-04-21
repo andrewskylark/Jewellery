@@ -1,18 +1,20 @@
 .social {
   @include reset-list;
+  padding-top: 6px;
 
   @media screen and (max-width: $tablet-width - 1) {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 0;
   }
 }
 
 .social__item {
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 
   @media screen and (max-width: $tablet-width - 1) {
     margin-bottom: 0;
-    margin-right: 30px;
+    margin-right: 18px;
   }
 
   &:last-child {
@@ -31,6 +33,12 @@
 }
 
 .social__link {
+  @media screen and (max-width: $tablet-width - 1) {
+    span {
+      display: none;
+    }
+  }
+
   &:hover,
   &:focus {
     svg {
@@ -38,13 +46,20 @@
     }
   }
 
-  @media screen and (max-width: $tablet-width - 1) {
-    span {
-      display: none;
+  &--fb {
+    @media screen and (max-width: $desktop-width - 1) and  (min-width: $tablet-width) {
+      margin-left: 3px;
+      padding-left: 3px;
     }
   }
 
   svg {
+    margin-right: 12px;
     transition: all ease 0.6s;
+
+    @media screen and (max-width: $tablet-width - 1) {
+      height: 21px;
+      width: auto;
+    }
   }
 }

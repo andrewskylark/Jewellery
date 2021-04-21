@@ -1,7 +1,7 @@
 .page-footer {
   min-height: 338px;
   max-width: $max-width;
-  padding: 100px 0;
+  padding: 90px 0;
   font-weight: 500;
   line-height: 130%;
   font-size: 16px;
@@ -10,13 +10,12 @@
 
   @media screen and (max-width: $desktop-width - 1) {
     min-height: 446px;
-    padding-right: 100px;
+    padding: 50px 111px 50px 6px;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
     min-height: 773px;
-    padding-top: 60px;
-    padding-right: 0;
+    padding: 50px 0;
   }
 
   a {
@@ -50,16 +49,16 @@
 .page-footer__sign_up {
   @media screen and (max-width: $desktop-width - 1) {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 41px;
   }
 
-  // @media screen and (max-width: $tablet-width - 1) {
-  //   margin-bottom: 50px;
-  // }
+  @media screen and (max-width: $tablet-width - 1) {
+    margin-bottom: 47px;
+  }
 
   h2 {
     @include reset-text;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-family: "Cormorant Garamond", "Tahoma", sans-serif;
     font-weight: bold;
     font-size: 34px;
@@ -67,7 +66,14 @@
     letter-spacing: 0.03em;
 
     @media screen and (max-width: $tablet-width) {
+      margin-bottom: 15px;
       width: 75%;
+    }
+
+    &::first-letter {
+      @media screen and (max-width: $desktop-width) {
+        margin-right: -4px;
+      }
     }
   }
 
@@ -76,9 +82,10 @@
     font-size: 16px;
     line-height: 130%;
     color: $text-accent;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 
     @media screen and (max-width: $tablet-width) {
+      margin-bottom: 33px;
       width: 80%;
     }
   }
@@ -94,6 +101,11 @@
 
   @media screen and (max-width: $desktop-width - 1) {
     min-width: auto;
+    padding-right: 13px;
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding-right: 0;
   }
 
   input {
@@ -156,8 +168,17 @@
     cursor: pointer;
     transition: all ease 0.4s;
 
+    @media screen and (max-width: $desktop-width - 1) and  (min-width: $tablet-width) {
+      right: 12px;
+    }
+
     svg {
       --icon_arrow: white;
+      margin-left: 5px;
+
+      @media screen and (max-width: $desktop-width - 1) {
+        margin-left: 9px;
+      }
     }
 
     &:hover,
@@ -180,9 +201,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media screen and (max-width: $desktop-width - 1) {
-    width: 66%;
-  }
+  // @media screen and (max-width: $desktop-width - 1) {
+  //   width: 66%;
+  // }
 
   @media screen and (max-width: $tablet-width - 1) {
     width: 100%;
@@ -201,6 +222,7 @@
   // }
 
   @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 3px;
     flex-direction: row;
   }
 }

@@ -1,0 +1,71 @@
+.insta {
+  @include reset-list;
+  display: grid;
+  grid-row-gap: 34px;
+  grid-column-gap: 27px;
+  grid-template-columns: (19.65% 34.1% 19.65% 19.65%);
+  grid-auto-flow: dense;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    grid-row-gap: 21px;
+    grid-column-gap: 16px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    grid-template-columns: repeat(2, 45.9%);
+    grid-row-gap: 27px;
+    grid-column-gap: 24px;
+  }
+}
+
+.insta__item {
+  display: block;
+  width: 100%;
+
+  @media screen and (max-width: $tablet-width - 1) {
+    height: 27vw;
+  }
+
+  &:nth-of-type(-n + 4) {
+    @media screen and (min-width: $tablet-width ) {
+      height: 17vw;
+    }
+  }
+
+  &:nth-of-type(n + 5) {
+    @media screen and (min-width: $tablet-width ) {
+      height: 11vw;
+    }
+  }
+
+  &:first-of-type {
+    @media screen and (max-width: $tablet-width - 1) {
+      height: 42vw;
+    }
+  }
+
+  &:nth-of-type(2) {
+      // width: 399px;
+    height: auto;
+    grid-row: span 2;
+  }
+
+  &:nth-of-type(3) {
+    @media screen and (max-width: $tablet-width - 1) {
+      display: none;
+    }
+  }
+
+  &:nth-of-type(4) {
+    @media screen and (max-width: $tablet-width - 1) {
+      display: none;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
