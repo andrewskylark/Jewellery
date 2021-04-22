@@ -7,17 +7,9 @@
   const navToggle = page.querySelector(`.page-header__toggle`);
   const headerTop = page.querySelector(`.page-header__top`);
 
-  // const isEscEvt = (evt, action) => {
-  //   if (evt.key === window.consts.ESC_KEY) {
-  //     action();
-  //   }
-  // };
   const onMenuEscPress = (evt) => {
-    window.consts.isEscEvt(evt, closeNav);
+    window.utils.isEscEvt(evt, closeNav());
   };
-  // const onElemEnableJs = (elemClass) => {
-  //   document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
-  // };
   const openNav = () => {
     nav.classList.remove(`nav--closed`);
     nav.classList.add(`nav--opened`);
@@ -33,11 +25,8 @@
     document.body.style.top = ``;
 
     window.removeEventListener(`resize`, closeNav);
-    document.removeEventListener(`keydown`, closeNav);
+    document.removeEventListener(`keydown`, onMenuEscPress);
   };
-
-  // onElemEnableJs(`page-header__top`);
-  // onElemEnableJs(`nav`);
 
   if (navToggle) {
     navToggle.addEventListener(`click`, () => {

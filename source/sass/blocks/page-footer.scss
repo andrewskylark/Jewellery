@@ -65,13 +65,13 @@
     line-height: 130%;
     letter-spacing: 0.03em;
 
-    @media screen and (max-width: $tablet-width) {
+    @media screen and (max-width: $tablet-width - 1) {
       margin-bottom: 15px;
       width: 75%;
     }
 
     &::first-letter {
-      @media screen and (max-width: $desktop-width) {
+      @media screen and (max-width: $desktop-width - 1) {
         margin-right: -4px;
       }
     }
@@ -84,7 +84,7 @@
     color: $text-accent;
     margin-bottom: 34px;
 
-    @media screen and (max-width: $tablet-width) {
+    @media screen and (max-width: $tablet-width - 1) {
       margin-bottom: 33px;
       width: 80%;
     }

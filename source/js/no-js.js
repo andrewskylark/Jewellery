@@ -1,7 +1,11 @@
 'use strict';
 (() => {
   const onElemEnableJs = (elemClass) => {
-    document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
+    let elem = document.querySelector(`.${elemClass}`);
+
+    if (elem) {
+      elem.classList.remove(`${elemClass}--no-js`);
+    }
   };
 
   onElemEnableJs(`page-header__top`);

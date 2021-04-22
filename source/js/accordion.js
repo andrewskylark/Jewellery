@@ -1,16 +1,22 @@
 'use strict';
 (() => {
-  const accBtns = document.querySelectorAll(`.accordion-btn`);
+  const accContainer = document.querySelector(`.accordion-container`);
 
-  if (accBtns) {
+  if (accContainer) {
+    const accBtns = accContainer.querySelectorAll(`.accordion-btn`);
+
     const activeElHandler = (el, className) => {
       if (el.classList.contains(`${className}--active`)) {
         el.classList.remove(`${className}--active`);
       } else {
-        let active = document.querySelector(`.${className}--active`);
-        if (active) {
-          active.classList.remove(`${className}--active`);
+
+        if (!accContainer.classList.contains(`accordion-container--no-wrap`)) {
+          let active = accContainer.querySelector(`.${className}--active`);
+          if (active) {
+            active.classList.remove(`${className}--active`);
+          }
         }
+
         el.classList.add(`${className}--active`);
       }
     };

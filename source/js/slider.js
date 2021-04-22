@@ -1,11 +1,9 @@
 'use strict';
 (() => {
   const container = document.querySelector(`.slider`);
-  const left = container.querySelector(`.slider__btn--left`);
-  const right = container.querySelector(`.slider__btn--right`);
-  const slider = container.querySelector(`.slider__list`);
 
   const addIndicators = () => {
+    const slider = container.querySelector(`.slider__list`);
     let renderedIndicators = container.querySelector(`.slider__indicators`);
     let viewport = document.documentElement.clientWidth;
 
@@ -41,6 +39,10 @@
   };
 
   const initiateSlider = () => {
+    const slider = container.querySelector(`.slider__list`);
+    const left = container.querySelector(`.slider__btn--left`);
+    const right = container.querySelector(`.slider__btn--right`);
+
     slider.style.transform = ``;
     addIndicators();
 
@@ -92,6 +94,7 @@
       });
 
     } else {
+
       let indicatorMobile = container.querySelector(`.slider__indicators li`);
       // моб - нет кнопок и буллетов, только свайп
       let xDown = null;

@@ -96,17 +96,23 @@
 "use strict";
 
 (() => {
-  const accBtns = document.querySelectorAll(`.accordion-btn`);
+  const accContainer = document.querySelector(`.accordion-container`);
 
-  if (accBtns) {
+  if (accContainer) {
+    const accBtns = accContainer.querySelectorAll(`.accordion-btn`);
+
     const activeElHandler = (el, className) => {
       if (el.classList.contains(`${className}--active`)) {
         el.classList.remove(`${className}--active`);
       } else {
-        let active = document.querySelector(`.${className}--active`);
-        if (active) {
-          active.classList.remove(`${className}--active`);
+
+        if (!accContainer.classList.contains(`accordion-container--no-wrap`)) {
+          let active = accContainer.querySelector(`.${className}--active`);
+          if (active) {
+            active.classList.remove(`${className}--active`);
+          }
         }
+
         el.classList.add(`${className}--active`);
       }
     };
@@ -166,17 +172,9 @@
   const navToggle = page.querySelector(`.page-header__toggle`);
   const headerTop = page.querySelector(`.page-header__top`);
 
-  // const isEscEvt = (evt, action) => {
-  //   if (evt.key === window.consts.ESC_KEY) {
-  //     action();
-  //   }
-  // };
   const onMenuEscPress = (evt) => {
-    window.consts.isEscEvt(evt, closeNav);
+    window.utils.isEscEvt(evt, closeNav());
   };
-  // const onElemEnableJs = (elemClass) => {
-  //   document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
-  // };
   const openNav = () => {
     nav.classList.remove(`nav--closed`);
     nav.classList.add(`nav--opened`);
@@ -192,11 +190,8 @@
     document.body.style.top = ``;
 
     window.removeEventListener(`resize`, closeNav);
-    document.removeEventListener(`keydown`, closeNav);
+    document.removeEventListener(`keydown`, onMenuEscPress);
   };
-
-  // onElemEnableJs(`page-header__top`);
-  // onElemEnableJs(`nav`);
 
   if (navToggle) {
     navToggle.addEventListener(`click`, () => {
@@ -242,7 +237,11 @@
 
 (() => {
   const onElemEnableJs = (elemClass) => {
-    document.querySelector(`.${elemClass}`).classList.remove(`${elemClass}--no-js`);
+    let elem = document.querySelector(`.${elemClass}`);
+
+    if (elem) {
+      elem.classList.remove(`${elemClass}--no-js`);
+    }
   };
 
   onElemEnableJs(`page-header__top`);
@@ -264,11 +263,9 @@
 
 (() => {
   const container = document.querySelector(`.slider`);
-  const left = container.querySelector(`.slider__btn--left`);
-  const right = container.querySelector(`.slider__btn--right`);
-  const slider = container.querySelector(`.slider__list`);
 
   const addIndicators = () => {
+    const slider = container.querySelector(`.slider__list`);
     let renderedIndicators = container.querySelector(`.slider__indicators`);
     let viewport = document.documentElement.clientWidth;
 
@@ -304,6 +301,10 @@
   };
 
   const initiateSlider = () => {
+    const slider = container.querySelector(`.slider__list`);
+    const left = container.querySelector(`.slider__btn--left`);
+    const right = container.querySelector(`.slider__btn--right`);
+
     slider.style.transform = ``;
     addIndicators();
 
@@ -355,6 +356,7 @@
       });
 
     } else {
+
       let indicatorMobile = container.querySelector(`.slider__indicators li`);
       // моб - нет кнопок и буллетов, только свайп
       let xDown = null;

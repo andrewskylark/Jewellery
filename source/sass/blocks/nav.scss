@@ -22,7 +22,7 @@
     top: 0;
     right: 0;
     background-color: $main;
-    z-index: 1;
+    z-index: 5;
   }
 }
 
@@ -39,6 +39,7 @@
     top: $header_top_nav_opened;
     overflow-y: scroll;
     min-height: calc(100vh - #{$header_top_nav_opened});
+    z-index: 5;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
