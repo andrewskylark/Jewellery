@@ -1,0 +1,85 @@
+.page-product {
+  padding-bottom: 113px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding-bottom: 53px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-bottom: 34px;
+  }
+}
+
+.page-product__card {
+  padding-top: 81px;
+  padding-bottom: 74px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding-top: 30px;
+    padding-bottom: 33px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 0;
+    padding-bottom: 34px;
+  }
+}
+
+.page-product__slider {
+  padding-top: 43px;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding-top: 36px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 23px;
+  }
+
+  h2 {
+    @include reset-text;
+    min-height: 89px;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
+    font-size: 34px;
+    line-height: 130%;
+    color: $text-main;
+    transform: translateX(-50%);
+    z-index: 15;
+
+    // @media screen and (max-width: $desktop-width - 1) {
+    //   min-height: 85px;
+    // }
+
+    a {
+      padding-bottom: 3px;
+      font-family: "Poppins", "Tahoma", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: $text-main;
+      border-bottom: 1px solid $main;
+      transition: all ease 0.6s;
+
+      @media screen and (max-width: $desktop-width - 1) {
+        padding-bottom: 5px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $main;
+      }
+
+      &:active {
+        opacity: 0.6;
+        color: $main-active;
+      }
+    }
+  }
+}

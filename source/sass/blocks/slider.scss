@@ -84,6 +84,15 @@
     order: 3;
   }
 
+  a:hover img,
+  a:focus img {
+    filter: drop-shadow(0px 2px 5px rgba(black, 0.7));
+  }
+
+  a:active img {
+    filter: brightness(0.7) drop-shadow(0px 2px 5px rgba(black, 0.7));
+  }
+
   img {
     order: 1;
     object-fit: cover;
