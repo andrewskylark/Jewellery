@@ -9,7 +9,7 @@
     grid-gap: 5.8%;
   }
 
-  @media screen and (max-width: $desktop-width - 1) {
+  @media screen and (max-width: $tablet-width - 1) {
     grid-template-columns: 1fr;
     grid-gap: 50px;
   }
@@ -238,7 +238,7 @@
     margin-bottom: 16px;
   }
 
-  @media screen and (max-width: $desktop-width - 1) {
+  @media screen and (max-width: $tablet-width - 1) {
     margin-bottom: 12px;
   }
 

@@ -252,6 +252,84 @@
 
 /***/ }),
 
+/***/ "./source/js/popups.js":
+/*!*****************************!*\
+  !*** ./source/js/popups.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+(() => {
+  const page = document.querySelector(`.page`);
+  const popupLinks = page.querySelectorAll(`.popup-link`);
+  // const lockPadding = document.querySelector(`.lock-padding`);
+
+  // let unlock = true;
+  // const TIMEOUT = 800;
+
+  if (popupLinks) {
+    const closePopupLinks = page.querySelectorAll(`.popup__close`);
+
+    // const onPopupEscPress = (evt, curPopup) => {
+    //   window.utils.isEscEvt(evt, closePopup(curPopup));
+    // };
+
+    const openPopup = (curPopup) => {
+      curPopup.classList.add(`popup--opened`);
+      page.classList.add(`page--locked`);
+      page.style.top = `-${window.scrollY}px`;
+
+      curPopup.addEventListener(`click`, (evt) => {
+        if (!evt.target.closest(`.popup__content`)) {
+          closePopup(evt.target.closest(`.popup`));
+        }
+      });
+
+      window.addEventListener(`keydown`, (evt) => {
+        window.utils.isEscEvt(evt, closePopup(curPopup));
+      });
+      // window.addEventListener(`resize`, closePopup(curPopup));
+    };
+
+    const closePopup = (curPopup) => {
+      curPopup.classList.remove(`popup--opened`);
+      page.classList.remove(`page--locked`);
+      page.style.top = ``;
+
+      // window.removeEventListener(`keydown`, onPopupEscPress(curPopup));
+      // window.removeEventListener(`resize`, closePopup(curPopup));
+    };
+
+    if (closePopupLinks) {
+      for (let closeLink of closePopupLinks) {
+        closeLink.addEventListener(`click`, (evt) => {
+          evt.preventDefault();
+
+          const curPopup = closeLink.closest(`.popup`);
+
+          closePopup(curPopup);
+        });
+      }
+    }
+
+    for (let link of popupLinks) {
+      link.addEventListener(`click`, (evt) => {
+        evt.preventDefault();
+
+        const popupName = link.getAttribute(`href`).replace(`#`, `.`);
+        const curPopup = page.querySelector(popupName);
+
+        openPopup(curPopup);
+      });
+    }
+  }
+})();
+
+
+/***/ }),
+
 /***/ "./source/js/slider.js":
 /*!*****************************!*\
   !*** ./source/js/slider.js ***!
@@ -475,9 +553,9 @@ window.utils = {
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************!*\
-  !*** multi ./source/js/no-js.js ./source/js/consts.js ./source/js/utils.js ./source/js/menu.js ./source/js/slider.js ./source/js/accordion.js ***!
-  \************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************!*\
+  !*** multi ./source/js/no-js.js ./source/js/consts.js ./source/js/utils.js ./source/js/menu.js ./source/js/slider.js ./source/js/accordion.js ./source/js/popups.js ***!
+  \**********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -486,7 +564,8 @@ __webpack_require__(/*! ./source/js/consts.js */"./source/js/consts.js");
 __webpack_require__(/*! ./source/js/utils.js */"./source/js/utils.js");
 __webpack_require__(/*! ./source/js/menu.js */"./source/js/menu.js");
 __webpack_require__(/*! ./source/js/slider.js */"./source/js/slider.js");
-module.exports = __webpack_require__(/*! ./source/js/accordion.js */"./source/js/accordion.js");
+__webpack_require__(/*! ./source/js/accordion.js */"./source/js/accordion.js");
+module.exports = __webpack_require__(/*! ./source/js/popups.js */"./source/js/popups.js");
 
 
 /***/ })

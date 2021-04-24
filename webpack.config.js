@@ -10,7 +10,8 @@ module.exports = {
     `./source/js/utils.js`,
     `./source/js/menu.js`,
     `./source/js/slider.js`,
-    `./source/js/accordion.js`
+    `./source/js/accordion.js`,
+    `./source/js/popups.js`
   ],
   output: {
     filename: `main.js`,

@@ -154,9 +154,11 @@
               </picture>
             </a>
           </li>
-          <li class="card__item card__item--pagi"><p>
-            1 of 4
-          </p></li>
+          <li class="card__item card__item--pagi">
+            <p>
+              1 of 4
+            </p>
+          </li>
         </ul>
 
         <div class="card__info">
@@ -181,7 +183,7 @@
             <dd>18” / 20”</dd>
           </dl>
 
-          <a href="" class="card__popup">Add To Cart</a>
+          <a href="#popup" class="card__popup popup-link">Add To Cart</a>
 
           <ul class="card__feats">
             <li>
@@ -472,7 +474,55 @@
       </div>
     </footer>
 
+    <section id="popup" class="popup">
+      <a href="#" class="popup__area"></a>
+      <div class="popup__content popup-cart">
+        <h2>The item was added to your cart</h2>
+        <div class="popup-cart__item">
+          <picture>
+            <source type="image/webp" srcset="img/necklace-detail.webp 1x, img/necklace-detail@2x.webp 2x">
+            <!-- 1х: 84px; 2x: 168px -->
+            <img src="img/necklace-detail.jpg" srcset="img/necklace-detail@2x.jpg 2x" alt="photo of blue gemstone necklace" width="84" height="79">
+          </picture>
 
+          <div class="popup-cart__item-name">
+            <h3>Gold Necklace</h3>
+            <p>$ 115</p>
+          </div>
+
+          <ul class="popup-cart__count">
+            <li>
+              <button type="button" class="popup-cart__add"></button>
+            </li>
+            <li>
+              <p>1</p>
+            </li>
+            <li>
+              <button type="button" class="popup-cart__remove"></button>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="popup-cart__total">
+          <li class="popup-cart__total-items">
+            <p>You have 1 item in the cart
+            </p>
+          </li>
+          <li>
+            <p>Cart subtotal: $ 115
+            </p>
+          </li>
+        </ul>
+
+        <ul class="popup-cart__links">
+          <li><a class="popup-cart__link" href="catalog.html">Continue shopping
+            </a></li>
+          <li><a class="popup-cart__link" href="#!">Checkout
+            </a></li>
+        </ul>
+        <a href="#" class="popup__close"></a>
+      </div>
+    </section>
   </div>
   <script src="js/main.js"></script>
 </body>
