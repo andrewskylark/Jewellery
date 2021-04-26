@@ -2,42 +2,50 @@
 (() => {
   const page = document.querySelector(`.page`);
   const popupLinks = page.querySelectorAll(`.popup-link`);
-  // const lockPadding = document.querySelector(`.lock-padding`);
-
-  // let unlock = true;
-  // const TIMEOUT = 800;
 
   if (popupLinks) {
     const closePopupLinks = page.querySelectorAll(`.popup__close`);
 
-    // const onPopupEscPress = (evt, curPopup) => {
-    //   window.utils.isEscEvt(evt, closePopup(curPopup));
-    // };
-
     const openPopup = (curPopup) => {
+      let firstInput = curPopup.querySelector(`input`);
+      let inputEmail = curPopup.querySelector(`input[type="email"]`);
+      let storedEmail = localStorage.getItem(`user_email`);
+
       curPopup.classList.add(`popup--opened`);
       page.classList.add(`page--locked`);
       page.style.top = `-${window.scrollY}px`;
+
+      if (firstInput) {
+        setTimeout(() => {
+          firstInput.focus();
+        }, window.consts.LOGIN_TIMEOUT);
+      }
+      if (inputEmail && storedEmail) {
+        setTimeout(() => {
+          inputEmail.value = storedEmail;
+        }, window.consts.LOGIN_TIMEOUT);
+      }
 
       curPopup.addEventListener(`click`, (evt) => {
         if (!evt.target.closest(`.popup__content`)) {
           closePopup(evt.target.closest(`.popup`));
         }
       });
-
       window.addEventListener(`keydown`, (evt) => {
-        window.utils.isEscEvt(evt, closePopup(curPopup));
+        if (evt.key === window.consts.ESCAPE_KEY) {
+          closePopup(curPopup);
+        }
       });
-      // window.addEventListener(`resize`, closePopup(curPopup));
+
+      if (inputEmail) {
+        localStorage.setItem(`user_email`, inputEmail.value);
+      }
     };
 
     const closePopup = (curPopup) => {
       curPopup.classList.remove(`popup--opened`);
       page.classList.remove(`page--locked`);
       page.style.top = ``;
-
-      // window.removeEventListener(`keydown`, onPopupEscPress(curPopup));
-      // window.removeEventListener(`resize`, closePopup(curPopup));
     };
 
     if (closePopupLinks) {
@@ -56,7 +64,7 @@
       link.addEventListener(`click`, (evt) => {
         evt.preventDefault();
 
-        const popupName = link.getAttribute(`href`).replace(`#`, `.`);
+        const popupName = link.getAttribute(`href`);
         const curPopup = page.querySelector(popupName);
 
         openPopup(curPopup);

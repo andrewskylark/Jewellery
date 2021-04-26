@@ -17,6 +17,11 @@
   line-height: 130%;
   border: 1px solid $main;
   border-bottom: none;
+
+  @media screen and (max-width: $tablet-width - 1) {
+    font-size: 18px;
+    padding-left: 20px;
+  }
 }
 
 .filter ul {
@@ -38,7 +43,14 @@
     margin-bottom: 10px;
     padding-left: 28px;
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
+
+    @media screen and (max-width: $tablet-width - 1) {
+      font-size: 16px;
+      margin-bottom: 18px;
+      padding-left: 25px;
+    }
   }
 }
 
@@ -93,21 +105,24 @@
 
 .filter__range-controls {
   position: relative;
-  width: 100%;
-  padding: 7px 16px 28px 30px;
+  padding: 7px 0px 28px;
+  width: 81%;
+  margin-left: 11%;
 
   label {
     font-size: 14px;
     line-height: 130%;
     position: absolute;
     bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
 
     &:first-of-type {
-      left: 62px;
+      left: 31%;
     }
 
     &:last-of-type {
-      left: 167px;
+      left: 81%;
     }
   }
 
@@ -142,13 +157,14 @@
   border: 8px solid $main;
   border-radius: 50%;
   cursor: pointer;
+  transform: translateX(-50%);
 
   &--min {
-    left: 71px;
+    left: 27%;
   }
 
   &--max {
-    left: 176px;
+    left: 77%;
   }
 }
 
@@ -190,11 +206,12 @@
 .filter {
   .accordion-btn {
     height: 67px;
-    transform: translateY(-100%);
+    top: -66px;
 
     &::before {
       top: 33px;
       right: 9%;
+      transition: none;
     }
   }
 
@@ -205,6 +222,10 @@
     &--active {
       max-height: 500px;
       padding-bottom: 16px;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        padding-bottom: 11px;
+      }
     }
   }
 }
@@ -226,6 +247,7 @@
     display: block;
   }
 }
+
 
 // .filter--no-js {
 //   @media screen and (max-width: $desktop-width - 1) {

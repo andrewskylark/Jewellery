@@ -50,7 +50,7 @@
 
         <ul class="page-header__login">
           <li>
-            <a href="blank.html"><span>Login</span></a>
+            <a href="#popup_login" class="popup-link"><span>Login</span></a>
           </li>
           <li>
             <a href="#!"><span>Cart 0</span>
@@ -108,7 +108,7 @@
             </a>
           </li>
           <li class="site-list__item site-list__item--small site-list__item--login">
-            <a class="site-list__link site-list__link--login" href="#!">
+            <a class="site-list__link site-list__link--login" href="#popup_login" class="popup-link">
               Login
             </a>
           </li>
@@ -191,7 +191,7 @@
             <dd>18” / 20”</dd>
           </dl>
 
-          <a href="#popup" class="card__popup popup-link">Add To Cart</a>
+          <a href="#popup_cart" class="card__popup popup-link">Add To Cart</a>
 
           <ul class="card__feats">
             <li>
@@ -502,7 +502,7 @@
       </div>
     </footer>
 
-    <section id="popup" class="popup">
+    <section id="popup_cart" class="popup">
       <a href="#" class="popup__area"></a>
       <div class="popup__content popup-cart">
         <h2>The item was added to your cart</h2>
@@ -549,9 +549,34 @@
           <li><a class="popup-cart__link" href="#!">Checkout
             </a></li>
         </ul>
-        <a href="#" class="popup__close"></a>
+        <a href="#" class="popup__close" aria-label="close pop-up"></a>
       </div>
     </section>
+
+    <section id="popup_login" class="popup popup--login">
+      <a href="#" class="popup__area"></a>
+      <div class="popup__content popup-login">
+
+        <form method="post" class="popup-login__form" action="https://echo.htmlacademy.ru/">
+          <h2>Log In</h2>
+
+          <div class="popup-login__inputs">
+            <!-- empty labels for >90% seo lighthouse -->
+            <label for="email_login" class="visually-hidden">Your E-mail</label>
+            <input type="email" name="email_login" id="email_login" placeholder="Your E-mail">
+
+            <label for="password" class="visually-hidden">password</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+
+            <a href="#!" class="popup-login__forgot-pass">Forgot your password?</a>
+          </div>
+          <button class="popup-login__btn-submit" type="submit">Log In</button>
+        </form>
+        <p>Don’t have an account? <a href="#!">Sign up</a></p>
+        <a href="#" class="popup__close" aria-label="close pop-up"></a>
+      </div>
+    </section>
+
   </div>
   <script src="js/main.js"></script>
 </body>

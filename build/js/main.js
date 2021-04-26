@@ -148,8 +148,59 @@
     MOBILE_WIDTH: `320`,
     TABLET_WIDTH: `768`,
     DESKTOP_WIDTH: `1024`,
-    DEBOUNCE_INTERVAL: 500
+    DEBOUNCE_INTERVAL: 500,
+    LOGIN_TIMEOUT: 800
   };
+})();
+
+
+/***/ }),
+
+/***/ "./source/js/filter.js":
+/*!*****************************!*\
+  !*** ./source/js/filter.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+(() => {
+  const page = document.querySelector(`.page`);
+  const showBtn = page.querySelector(`.filter-btn-show`);
+
+  if (showBtn) {
+    const popupFilter = page.querySelector(`.popup-filter`);
+    const openFilter = () => {
+
+      popupFilter.classList.add(`popup-filter--opened`);
+      page.classList.add(`page--locked`);
+      page.style.top = `-${window.scrollY}px`;
+
+      popupFilter.addEventListener(`click`, (evt) => {
+        if (evt.target.classList.contains(`popup-filter`) || evt.target.classList.contains(`popup-filter__close`)) {
+          closeFilter();
+        }
+      });
+      window.addEventListener(`keydown`, (evt) => {
+        if (evt.key === window.consts.ESCAPE_KEY) {
+          closeFilter();
+        }
+      });
+      window.addEventListener(`resize`, closeFilter);
+    };
+
+    const closeFilter = () => {
+      popupFilter.classList.remove(`popup-filter--opened`);
+      page.classList.remove(`page--locked`);
+      page.style.top = ``;
+    };
+
+    showBtn.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      openFilter();
+    });
+  }
 })();
 
 
@@ -247,6 +298,7 @@
   onElemEnableJs(`page-header__top`);
   onElemEnableJs(`nav`);
   onElemEnableJs(`accordion-container`);
+  onElemEnableJs(`popup-filter`);
 })();
 
 
@@ -264,42 +316,50 @@
 (() => {
   const page = document.querySelector(`.page`);
   const popupLinks = page.querySelectorAll(`.popup-link`);
-  // const lockPadding = document.querySelector(`.lock-padding`);
-
-  // let unlock = true;
-  // const TIMEOUT = 800;
 
   if (popupLinks) {
     const closePopupLinks = page.querySelectorAll(`.popup__close`);
 
-    // const onPopupEscPress = (evt, curPopup) => {
-    //   window.utils.isEscEvt(evt, closePopup(curPopup));
-    // };
-
     const openPopup = (curPopup) => {
+      let firstInput = curPopup.querySelector(`input`);
+      let inputEmail = curPopup.querySelector(`input[type="email"]`);
+      let storedEmail = localStorage.getItem(`user_email`);
+
       curPopup.classList.add(`popup--opened`);
       page.classList.add(`page--locked`);
       page.style.top = `-${window.scrollY}px`;
+
+      if (firstInput) {
+        setTimeout(() => {
+          firstInput.focus();
+        }, window.consts.LOGIN_TIMEOUT);
+      }
+      if (inputEmail && storedEmail) {
+        setTimeout(() => {
+          inputEmail.value = storedEmail;
+        }, window.consts.LOGIN_TIMEOUT);
+      }
 
       curPopup.addEventListener(`click`, (evt) => {
         if (!evt.target.closest(`.popup__content`)) {
           closePopup(evt.target.closest(`.popup`));
         }
       });
-
       window.addEventListener(`keydown`, (evt) => {
-        window.utils.isEscEvt(evt, closePopup(curPopup));
+        if (evt.key === window.consts.ESCAPE_KEY) {
+          closePopup(curPopup);
+        }
       });
-      // window.addEventListener(`resize`, closePopup(curPopup));
+
+      if (inputEmail) {
+        localStorage.setItem(`user_email`, inputEmail.value);
+      }
     };
 
     const closePopup = (curPopup) => {
       curPopup.classList.remove(`popup--opened`);
       page.classList.remove(`page--locked`);
       page.style.top = ``;
-
-      // window.removeEventListener(`keydown`, onPopupEscPress(curPopup));
-      // window.removeEventListener(`resize`, closePopup(curPopup));
     };
 
     if (closePopupLinks) {
@@ -318,7 +378,7 @@
       link.addEventListener(`click`, (evt) => {
         evt.preventDefault();
 
-        const popupName = link.getAttribute(`href`).replace(`#`, `.`);
+        const popupName = link.getAttribute(`href`);
         const curPopup = page.querySelector(popupName);
 
         openPopup(curPopup);
@@ -553,9 +613,9 @@ window.utils = {
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************************************************************************************!*\
-  !*** multi ./source/js/no-js.js ./source/js/consts.js ./source/js/utils.js ./source/js/menu.js ./source/js/slider.js ./source/js/accordion.js ./source/js/popups.js ***!
-  \**********************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** multi ./source/js/no-js.js ./source/js/consts.js ./source/js/utils.js ./source/js/menu.js ./source/js/slider.js ./source/js/accordion.js ./source/js/popups.js ./source/js/filter.js ***!
+  \********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -565,7 +625,8 @@ __webpack_require__(/*! ./source/js/utils.js */"./source/js/utils.js");
 __webpack_require__(/*! ./source/js/menu.js */"./source/js/menu.js");
 __webpack_require__(/*! ./source/js/slider.js */"./source/js/slider.js");
 __webpack_require__(/*! ./source/js/accordion.js */"./source/js/accordion.js");
-module.exports = __webpack_require__(/*! ./source/js/popups.js */"./source/js/popups.js");
+__webpack_require__(/*! ./source/js/popups.js */"./source/js/popups.js");
+module.exports = __webpack_require__(/*! ./source/js/filter.js */"./source/js/filter.js");
 
 
 /***/ })

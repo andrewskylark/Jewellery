@@ -11,4 +11,5 @@
   onElemEnableJs(`page-header__top`);
   onElemEnableJs(`nav`);
   onElemEnableJs(`accordion-container`);
+  onElemEnableJs(`popup-filter`);
 })();

@@ -1,215 +1,149 @@
-.popup-cart {
-  width: 500px;
-  min-height: 439px;
-  padding: 47px 35px 25px;
+.popup.popup--login {
   background-color: white;
+  padding-top: 100px;
+}
+
+.popup-login .popup__close {
+  @media screen and (max-width: $desktop-width - 1) and (min-width: $tablet-width) {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+
+    &::before,
+    &::after {
+      top: 50%;
+      left: 50%;
+      width: 25px;
+    }
+  }
+}
+
+.popup-login {
+  width: 430px;
+  min-height: 586px;
+  padding: 138px 45px 25px;
+  background-color: $bg;
+  background-image: url("../img/bg_login.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  box-shadow: 0px 5px 32px rgba(226, 221, 215, 0.24);
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/bg_login@2x.jpg");
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    width: 442px;
+    padding: 138px 51px 25px;
+  }
 
   @media screen and (max-width: $tablet-width - 1) {
-    width: 100%;
-    min-height: 519px;
-    padding: 40px 15px 25px;
+    width: 270px;
+    min-height: 470px;
+    padding: 84px 15px 25px;
+  }
+}
+
+.popup-login__form {
+  padding-top: 50px;
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-top: 36px;
   }
 
   h2 {
     @include reset-text;
-    margin-bottom: 40px;
+    margin-bottom: 23px;
     text-align: center;
-    font-size: 26px;
+    font-size: 34px;
     line-height: 130%;
     font-family: "Cormorant Garamond", "Tahoma", sans-serif;
 
     @media screen and (max-width: $tablet-width - 1) {
-      width: 73%;
       font-size: 24px;
-      line-height: 120%;
-      margin: 0 auto 30px;
+      // line-height: 120%;
+      margin: 0 auto 18px;
     }
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 44%;
-    width: 500px;
-    height: 1px;
-    background-color: #f6f5f4;
-  }
-}
-
-.popup-cart__item {
-  display: flex;
-  margin-bottom: 58px;
-
-  @media screen and (max-width: $tablet-width - 1) {
-    margin-bottom: 48px;
-  }
-
-  img {
-    width: 84px;
-    height: 79px;
-    margin-right: 20px;
-
-    @media screen and (max-width: $tablet-width - 1) {
-      width: 70px;
-      height: 63px;
-      margin-right: 15px;
-    }
-  }
-}
-
-.popup-cart__item-name {
-  @include reset-list;
-  display: flex;
-  flex-direction: column;
-
-  h3 {
-    @include reset-text;
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 130%;
-    font-family: "Cormorant Garamond", "Tahoma", sans-serif;
-
-    @media screen and (max-width: $tablet-width - 1) {
-      font-size: 16px;
-    }
-  }
-
-  p {
-    @include reset-text;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 130%;
-
-    @media screen and (max-width: $tablet-width - 1) {
-      font-size: 16px;
-    }
-  }
-}
-
-.popup-cart__count {
-  @include reset-list;
-  margin-left: auto;
-  margin-right: -4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: center;
-
-  li {
+  input {
+    min-height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  button {
-    position: relative;
-    padding: 0;
-    width: 18px;
-    height: 18px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-
-    &:active {
-      opacity: 0.7;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 85%;
-      height: 2px;
-      top: 50%;
-      left: 0;
-      background: $text-accent;
-      transition: all 0.6s ease;
-    }
-
-    &:hover::before,
-    &:hover::after,
-    &:focus::before,
-    &:focus::after {
-      background: $text-main;
-    }
-  }
-
-  p {
-    @include reset-text;
-    font-size: 18px;
-    line-height: 130%;
-    text-align: center;
-
-    @media screen and (max-width: $tablet-width - 1) {
-      font-size: 16px;
-    }
-  }
-
-  .popup-cart__add::after {
-    content: "";
-    position: absolute;
-    width: 85%;
-    height: 2px;
-    top: 50%;
-    left: 0;
-    background: $text-accent;
-    transform: rotate(90deg);
-    transition: all 0.6s ease;
-  }
-
-  .popup-cart__remove::before {
-    top: 30%;
-    left: 0;
-  }
-}
-
-.popup-cart__total {
-  @include reset-list;
-  width: 100%;
-  margin-bottom: 36px;
-  display: flex;
-  justify-content: space-between;
-
-  @media screen and (max-width: $tablet-width - 1) {
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 33px;
-    font-size: 16px;
-  }
-
-  p {
-    @include reset-text;
-    font-size: 14px;
-    line-height: 130%;
     font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $text-main;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $text-main;
+    transition: all ease 0.6s;
 
-    @media screen and (max-width: $tablet-width - 1) {
-      font-size: 12px;
+    &:last-of-type {
+      margin-bottom: 0;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        margin-bottom: 3px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $text-accent;
+      box-shadow: inset 0 -6px 10px -3px rgba($main, 0.5);
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 500;
+      color: $text-accent;
+      transition: all ease 0.4s;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder  {
+      color: $text-main;
     }
   }
 }
 
-.popup-cart__total-items {
-  font-weight: normal;
+.popup-login__forgot-pass {
+  width: fit-content;
+  // margin-left: 200px;
+  display: block;
+  margin-left: auto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $text-accent;
 
-  @media screen and (max-width: $tablet-width - 1) {
-    margin-bottom: 14px;
+  &:hover,
+  &:focus {
+    color: $text-main;
+  }
+
+  &:active {
+    opacity: 0.7;
   }
 }
 
-.popup-cart__links {
-  @include reset-list;
-  display: flex;
-  justify-content: space-between;
+.popup-login__inputs {
+  margin-bottom: 45px;
 
   @media screen and (max-width: $tablet-width - 1) {
-    flex-direction: column;
+    margin-bottom: 35px;
   }
 }
 
-.popup-cart__link {
-  width: 200px;
+.popup-login__btn-submit {
+  width: 100%;
   min-height: 68px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,10 +153,9 @@
   cursor: pointer;
   transition: all 0.5s ease;
 
-  @media screen and (max-width: $tablet-width - 1) {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+  // @media screen and (max-width: $tablet-width - 1) {
+  //   width: 100%;
+  // }
 
   &:hover,
   &:focus {
@@ -234,11 +167,30 @@
     background: $main-active;
     opacity: 0.7;
   }
+}
 
-  &[href="catalog.html"] {
-    background: transparent;
+.popup-login__form + p {
+  @include reset-text;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $text-accent;
+  text-align: center;
+
+  a {
     color: $text-main;
+
+    &:hover,
+    &:focus {
+      color: $main;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
   }
 }
+
+
 
 
