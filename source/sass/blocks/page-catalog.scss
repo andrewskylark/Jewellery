@@ -6,13 +6,9 @@
     position: absolute;
     height: 1px;
     width: 100%;
-    background: #F6F5F4;
+    background: #f6f5f4;
     bottom: 129px;
     left: 0;
-
-    // @media screen and (max-width: $desktop-width - 1) {
-    //   left: -10vw;
-    // }
 
     @media screen and (max-width: $tablet-width - 1) {
       display: none;
@@ -28,23 +24,23 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient($bg-catalog, $bg-catalog),
-   url("../img/bg_main_catalog_dt.jpg");
+    url("../img/bg_main_catalog_dt.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
   @media (min-resolution: 2dppx) {
     background-image: linear-gradient($bg-catalog, $bg-catalog),
-     url("../img/bg_main_catalog_dt@2x.jpg");
+      url("../img/bg_main_catalog_dt@2x.jpg");
   }
 
   @media screen and (max-width: $desktop-width - 1) {
     background-image: linear-gradient($bg-catalog, $bg-catalog),
-     url("../img/bg_main_catalog_small.jpg");
+      url("../img/bg_main_catalog_small.jpg");
 
     @media (min-resolution: 2dppx) {
       background-image: linear-gradient($bg-catalog, $bg-catalog),
-       url("../img/bg_main_catalog_small@2x.jpg");
+        url("../img/bg_main_catalog_small@2x.jpg");
     }
   }
 
@@ -52,11 +48,11 @@
     padding: 79px 11% 10px;
     text-align: center;
     background-image: linear-gradient($bg-catalog, $bg-catalog),
-     url("../img/bg_main_catalog_mob.jpg");
+      url("../img/bg_main_catalog_mob.jpg");
 
     @media (min-resolution: 2dppx) {
       background-image: linear-gradient($bg-catalog, $bg-catalog),
-       url("../img/bg_main_catalog_mob@2x.jpg");
+        url("../img/bg_main_catalog_mob@2x.jpg");
     }
   }
 
@@ -68,10 +64,6 @@
     font-family: "Cormorant Garamond", "Tahoma", sans-serif;
     text-transform: uppercase;
     color: $text-light;
-
-    // @media screen and (max-width: $tablet-width - 1) {
-    //   font-size: 38px;
-    // }
   }
 
   p {

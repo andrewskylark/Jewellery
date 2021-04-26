@@ -13,13 +13,11 @@
   @media screen and (max-width: $desktop-width - 1) {
     width: 678px;
     padding-top: 139px;
-    // width: 88.283vw;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
     width: 290px;
     padding-top: 129px;
-    // width: 88.283vw;
   }
 }
 
@@ -40,7 +38,7 @@
   padding-bottom: 25px;
 
   &:nth-of-type(4n+4) {
-    margin-right: 0
+    margin-right: 0;
   }
 
   @media screen and (max-width: 1275px) {
@@ -49,7 +47,6 @@
   }
 
   @media screen and (max-width: $desktop-width - 1) {
-    // width: 42.188vw;
     width: 324px;
     margin-right: 30px;
 
@@ -86,11 +83,11 @@
 
   a:hover img,
   a:focus img {
-    filter: drop-shadow(0px 2px 5px rgba(black, 0.7));
+    filter: drop-shadow(0 2px 5px rgba(black, 0.7));
   }
 
   a:active img {
-    filter: brightness(0.7) drop-shadow(0px 2px 5px rgba(black, 0.7));
+    filter: brightness(0.7) drop-shadow(0 2px 5px rgba(black, 0.7));
   }
 
   img {
@@ -99,7 +96,6 @@
     margin-bottom: 17px;
 
     @media screen and (max-width: $desktop-width - 1) {
-      // width: 42.188vw;
       width: 324px;
       height: 340px;
     }

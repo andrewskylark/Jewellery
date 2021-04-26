@@ -32,7 +32,7 @@ a {
 }
 // firefox fix: removes red border on inputs:required
 input:required {
-  box-shadow: none
+  box-shadow: none;
 }
 // fixes border rounding on IOS
 input,
@@ -44,6 +44,14 @@ button {
 // resets 1em padding left & right on IOS for buttons with no text
 button.ios_fix {
   padding: initial;
+}
+// ff fix, line-height should be = height of the input in ff
+input:-moz-placeholder { /* Firefox 18- */
+  line-height: 2.5em;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+  line-height: 2.5em;
 }
 
 .input-invalid {

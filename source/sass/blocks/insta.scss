@@ -27,13 +27,13 @@
   }
 
   &:nth-of-type(-n + 4) {
-    @media screen and (min-width: $tablet-width ) {
+    @media screen and (min-width: $tablet-width) {
       height: 17vw;
     }
   }
 
   &:nth-of-type(n + 5) {
-    @media screen and (min-width: $tablet-width ) {
+    @media screen and (min-width: $tablet-width) {
       height: 11vw;
     }
   }
@@ -45,7 +45,6 @@
   }
 
   &:nth-of-type(2) {
-      // width: 399px;
     height: auto;
     grid-row: span 2;
   }

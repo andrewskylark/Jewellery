@@ -1,5 +1,38 @@
 .filter {
   position: relative;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    display: none;
+
+    &--no-js {
+      display: block;
+    }
+  }
+
+  .accordion-btn {
+    height: 67px;
+    top: -66px;
+
+    &::before {
+      top: 33px;
+      right: 9%;
+      transition: none;
+    }
+  }
+
+  .accordion-content {
+    max-height: 0;
+    padding-bottom: 0;
+
+    &--active {
+      max-height: 500px;
+      padding-bottom: 16px;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        padding-bottom: 11px;
+      }
+    }
+  }
 }
 
 .filter fieldset {
@@ -34,9 +67,6 @@
 
 
 .filter__option {
-  // position: relative;
-  // padding-left: 15px;
-
   label {
     position: relative;
     display: block;
@@ -73,7 +103,6 @@
   top: 50%;
   width: 15px;
   height: 15px;
-  // background-color: $main;
   border: 8px solid $main;
   transform: translateY(-50%);
   transition: border-color ease 0.4s;
@@ -105,7 +134,7 @@
 
 .filter__range-controls {
   position: relative;
-  padding: 7px 0px 28px;
+  padding: 7px 0 28px;
   width: 81%;
   margin-left: 11%;
 
@@ -203,43 +232,6 @@
   }
 }
 
-.filter {
-  .accordion-btn {
-    height: 67px;
-    top: -66px;
-
-    &::before {
-      top: 33px;
-      right: 9%;
-      transition: none;
-    }
-  }
-
-  .accordion-content {
-    max-height: 0;
-    padding-bottom: 0;
-
-    &--active {
-      max-height: 500px;
-      padding-bottom: 16px;
-
-      @media screen and (max-width: $tablet-width - 1) {
-        padding-bottom: 11px;
-      }
-    }
-  }
-}
-
-.filter {
-  @media screen and (max-width: $desktop-width - 1) {
-    display: none;
-
-    &--no-js {
-      display: block;
-    }
-  }
-}
-
 .filter-btn-show {
   display: none;
 
@@ -247,14 +239,6 @@
     display: block;
   }
 }
-
-
-// .filter--no-js {
-//   @media screen and (max-width: $desktop-width - 1) {
-//     grid-template-columns: 1fr;
-//     grid-auto-flow: row;
-//   }
-// }
 
 .filter.accordioncontainer--no-js {
   .accordion-content {

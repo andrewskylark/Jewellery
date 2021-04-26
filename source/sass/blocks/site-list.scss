@@ -54,13 +54,11 @@
   }
 }
 
-.nav--opened .site-list__item {
-  @media screen and (max-width: $desktop-width - 1) {
-    // width: 100%;
-    // min-height: 60px;
-    // text-align: left;
-  }
-}
+// .nav--opened .site-list__item {
+//   @media screen and (max-width: $desktop-width - 1) {
+//     width: 100%;
+//   }
+// }
 
 .site-list__link {
   position: relative;
@@ -134,5 +132,3 @@
     display: block;
   }
 }
-
-

@@ -20,8 +20,8 @@
   margin-bottom: 42px;
 
   @media screen and (max-width: $desktop-width - 1) {
-   display: none;
-   margin-bottom: 0;
+    display: none;
+    margin-bottom: 0;
   }
 
   input {
@@ -50,7 +50,7 @@
 
       &:hover,
       &:focus {
-      box-shadow: 0 0 3px 3px rgba($text-light, 0.5);
+        box-shadow: 0 0 3px 3px rgba($text-light, 0.5);
       }
     }
 
@@ -263,10 +263,10 @@
 
       &:hover::before,
       &:focus::before {
-      background-color: $text-accent;
-      box-shadow: 0 8px 0 0 $text-accent,
-        0 -8px 0 0 $text-accent;
-      transform: translateX(-50%);
+        background-color: $text-accent;
+        box-shadow: 0 8px 0 0 $text-accent,
+          0 -8px 0 0 $text-accent;
+        transform: translateX(-50%);
       }
     }
   }

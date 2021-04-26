@@ -9,7 +9,9 @@
     const openPopup = (curPopup) => {
       let firstInput = curPopup.querySelector(`input`);
       let inputEmail = curPopup.querySelector(`input[type="email"]`);
-      let storedEmail = localStorage.getItem(`user_email`);
+      // let storedEmail = localStorage.getItem(`user_email`);
+      let isStorageSupport = true;
+      let storage = ``;
 
       curPopup.classList.add(`popup--opened`);
       page.classList.add(`page--locked`);
@@ -20,9 +22,23 @@
           firstInput.focus();
         }, window.consts.LOGIN_TIMEOUT);
       }
-      if (inputEmail && storedEmail) {
+      if (inputEmail) {
         setTimeout(() => {
-          inputEmail.value = storedEmail;
+          try {
+            storage = localStorage.getItem(`user_email`);
+          } catch (err) {
+            isStorageSupport = false;
+          }
+
+          if (storage) {
+            inputEmail.value = storage;
+          }
+        }, window.consts.LOGIN_TIMEOUT);
+      }
+
+      if (inputEmail && isStorageSupport) {
+        setTimeout(() => {
+          localStorage.setItem(`user_email`, inputEmail.value);
         }, window.consts.LOGIN_TIMEOUT);
       }
 
@@ -36,10 +52,6 @@
           closePopup(curPopup);
         }
       });
-
-      if (inputEmail) {
-        localStorage.setItem(`user_email`, inputEmail.value);
-      }
     };
 
     const closePopup = (curPopup) => {

@@ -136,7 +136,7 @@
     }
 
     &:hover::placeholder,
-    &:focus::placeholder  {
+    &:focus::placeholder {
       color: $text-light;
     }
 
@@ -145,12 +145,9 @@
 
       &:hover,
       &:focus {
-      box-shadow: 0 0 3px 3px rgba($text-light, 0.5);
+        box-shadow: 0 0 3px 3px rgba($text-light, 0.5);
       }
     }
-    // @media screen and (max-width: $tablet-width - 1) {
-    //   min-width: auto;
-    // }
   }
 
   button {
@@ -183,7 +180,6 @@
 
     &:hover,
     &:focus {
-
       svg {
         animation: 1s bounce_right infinite;
       }
@@ -201,10 +197,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  // @media screen and (max-width: $desktop-width - 1) {
-  //   width: 66%;
-  // }
-
   @media screen and (max-width: $tablet-width - 1) {
     width: 100%;
     flex-direction: column;
@@ -216,10 +208,6 @@
 .page-footer__social {
   display: flex;
   flex-direction: column;
-
-  // @media screen and (max-width: $desktop-width - 1) {
-
-  // }
 
   @media screen and (max-width: $tablet-width - 1) {
     padding-top: 3px;

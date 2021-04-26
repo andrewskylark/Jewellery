@@ -28,7 +28,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
-  box-shadow: 0px 5px 32px rgba(226, 221, 215, 0.24);
+  box-shadow: 0 5px 32px rgba(226, 221, 215, 0.24);
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/bg_login@2x.jpg");
@@ -63,7 +63,6 @@
 
     @media screen and (max-width: $tablet-width - 1) {
       font-size: 24px;
-      // line-height: 120%;
       margin: 0 auto 18px;
     }
   }
@@ -99,14 +98,13 @@
 
     &::placeholder {
       font-size: 14px;
-      line-height: 21px;
       font-weight: 500;
       color: $text-accent;
       transition: all ease 0.4s;
     }
 
     &:hover::placeholder,
-    &:focus::placeholder  {
+    &:focus::placeholder {
       color: $text-main;
     }
   }
@@ -114,7 +112,6 @@
 
 .popup-login__forgot-pass {
   width: fit-content;
-  // margin-left: 200px;
   display: block;
   margin-left: auto;
   font-weight: 500;
@@ -153,10 +150,6 @@
   cursor: pointer;
   transition: all 0.5s ease;
 
-  // @media screen and (max-width: $tablet-width - 1) {
-  //   width: 100%;
-  // }
-
   &:hover,
   &:focus {
     background: $main-hover;
@@ -190,7 +183,3 @@
     }
   }
 }
-
-
-
-
