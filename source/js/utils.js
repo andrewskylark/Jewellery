@@ -2,7 +2,7 @@
 
 window.utils = {
   isEscEvt: (evt, action) => {
-    if (evt.key === window.consts.ESC_KEY) {
+    if (evt.key === window.consts.ESCAPE_KEY) {
       action();
     }
   },

@@ -1,5 +1,4 @@
 'use strict';
-// const ESC_KEY = `Escape`;
 
 (() => {
   const page = document.querySelector(`.page`);
@@ -8,8 +7,9 @@
   const headerTop = page.querySelector(`.page-header__top`);
 
   const onMenuEscPress = (evt) => {
-    window.utils.isEscEvt(evt, closeNav());
+    window.utils.isEscEvt(evt, closeNav);
   };
+
   const openNav = () => {
     nav.classList.remove(`nav--closed`);
     nav.classList.add(`nav--opened`);

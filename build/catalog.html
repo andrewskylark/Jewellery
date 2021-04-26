@@ -17,9 +17,9 @@
   <link rel="preload" href="fonts/cormorant-garamond-v10-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
   <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?ver=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?ver=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?ver=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?ver=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?ver=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?ver=2">
   <meta name="theme-color" content="#ffffff">
 </head>
 
@@ -104,7 +104,7 @@
             </a>
           </li>
           <li class="site-list__item site-list__item--small site-list__item--login">
-            <a class="site-list__link site-list__link--login" href="#popup_login">
+            <a class="site-list__link site-list__link--login popup-link" href="#popup_login">
               Login
             </a>
           </li>
@@ -393,7 +393,7 @@
           <form class="page-footer__form" action="https://echo.htmlacademy.ru/" method="get">
             <!-- Пустой лэйбл для SEO в маяке -->
             <label class="visually-hidden" for="email">Enter your email</label>
-            <input type="email" name="email" id="email" placeholder="Your E-mail">
+            <input type="email" name="email" id="email" placeholder="Your E-mail" required="">
             <button type="submit"> Sign Up
               <svg width="29" height="9">
                 <use xlink:href="img/sprite_auto.svg#icon_arrow"></use>
@@ -506,10 +506,10 @@
           <div class="popup-login__inputs">
             <!-- empty labels for >90% seo lighthouse -->
             <label for="email_login" class="visually-hidden">Your E-mail</label>
-            <input type="email" name="email_login" id="email_login" placeholder="Your E-mail">
+            <input type="email" name="email_login" id="email_login" placeholder="Your E-mail" required="">
 
             <label for="password" class="visually-hidden">password</label>
-            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password" required="">
 
             <a href="#!" class="popup-login__forgot-pass">Forgot your password?</a>
           </div>

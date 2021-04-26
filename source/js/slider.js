@@ -16,13 +16,13 @@
     let slidesCount = sliderLength / moveStep;
     let indicatorsContainer = document.createElement(`ol`);
     indicatorsContainer.classList.add(`slider__indicators`);
-    //  моб: нет буллитов, текст 1 из N слайдов
+
     if (viewport < window.consts.TABLET_WIDTH) {
       let sliderIndicatorsItem = document.createElement(`li`);
       sliderIndicatorsItem.textContent = `1 of ${slidesCount}`;
       indicatorsContainer.appendChild(sliderIndicatorsItem);
     } else {
-      // расчет кол-ва буллетов по кол-ву слайдов и рендер
+
       for (let i = 0; i < slidesCount; i++) {
         let sliderIndicatorsItem = document.createElement(`li`);
         let btn = document.createElement(`button`);
@@ -55,7 +55,7 @@
     let indicatorItems = container.querySelectorAll(`.slider__indicators button`);
 
     if (viewport >= window.consts.TABLET_WIDTH) {
-      // планшет и десктоп: события на кнопки и буллеты слайдера
+
       indicatorItems.forEach((el) => {
         el.addEventListener(`click`, () => {
           if (!el.classList.contains(`active`)) {
@@ -96,7 +96,7 @@
     } else {
 
       let indicatorMobile = container.querySelector(`.slider__indicators li`);
-      // моб - нет кнопок и буллетов, только свайп
+
       let xDown = null;
       let yDown = null;
 
@@ -116,7 +116,7 @@
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
           if (xDiff > 0) {
-            // свайп влево
+
             if (slide > 0) {
               slide--;
             } else {
@@ -127,7 +127,7 @@
             indicatorMobile.innerHTML = `${slide + 1} of ${slidesCount}`;
 
           } else {
-            // свайп вправо
+
             if (slide < (slidesCount - 1)) {
               slide++;
             } else {
@@ -153,19 +153,5 @@
     window.addEventListener(`resize`, window.utils.debounce(() => {
       initiateSlider();
     }));
-
-    // window.addEventListener(`resize`, (event) => {
-    //   switch (event.currentTarget.innerWidth) {
-    //     case 768:
-    //       console.log(`Start`);
-    //       break;
-    //     case 1024:
-    //       console.log(`1024`);
-    //       break;
-
-    //   }
-    // console.log(event.currentTarget.innerWidth);
-    // initiateSlider();
-    // });
   }
 })();

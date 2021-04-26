@@ -212,6 +212,7 @@
   dd {
     grid-column-start: 2;
     text-align: right;
+    margin-inline-start: 0;
 
     &:last-child {
       @media screen and (max-width: $desktop-width - 1) {
