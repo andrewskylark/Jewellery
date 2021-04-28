@@ -171,23 +171,25 @@
 
   if (showBtn) {
     const popupFilter = page.querySelector(`.popup-filter`);
+
     const openFilter = () => {
+      if (popupFilter) {
+        popupFilter.classList.add(`popup-filter--opened`);
+        page.classList.add(`page--locked`);
+        page.style.top = `-${window.scrollY}px`;
 
-      popupFilter.classList.add(`popup-filter--opened`);
-      page.classList.add(`page--locked`);
-      page.style.top = `-${window.scrollY}px`;
-
-      popupFilter.addEventListener(`click`, (evt) => {
-        if (evt.target.classList.contains(`popup-filter`) || evt.target.classList.contains(`popup-filter__close`)) {
-          closeFilter();
-        }
-      });
-      window.addEventListener(`keydown`, (evt) => {
-        if (evt.key === window.consts.ESCAPE_KEY) {
-          closeFilter();
-        }
-      });
-      window.addEventListener(`resize`, closeFilter);
+        popupFilter.addEventListener(`click`, (evt) => {
+          if (evt.target.classList.contains(`popup-filter`) || evt.target.classList.contains(`popup-filter__close`)) {
+            closeFilter();
+          }
+        });
+        window.addEventListener(`keydown`, (evt) => {
+          if (evt.key === window.consts.ESCAPE_KEY) {
+            closeFilter();
+          }
+        });
+        window.addEventListener(`resize`, closeFilter);
+      }
     };
 
     const closeFilter = () => {
@@ -323,7 +325,6 @@
     const openPopup = (curPopup) => {
       let firstInput = curPopup.querySelector(`input`);
       let inputEmail = curPopup.querySelector(`input[type="email"]`);
-      // let storedEmail = localStorage.getItem(`user_email`);
       let isStorageSupport = true;
       let storage = ``;
 

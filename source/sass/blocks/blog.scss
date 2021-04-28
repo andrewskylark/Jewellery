@@ -33,7 +33,7 @@
     background-size: 100% auto;
   }
 
-  &:nth-child(2) {
+  &:nth-child(2n) {
     @media screen and (min-width: $tablet-width) {
       background-position: right;
 
@@ -44,7 +44,7 @@
     }
   }
 
-  &:nth-child(3) {
+  &:nth-child(3n) {
     @media screen and (min-width: $desktop-width) {
       grid-row: 1 / span 2;
       grid-column: 2;

@@ -19,6 +19,8 @@
   &--locked {
     position: fixed;
     width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
     overflow-y: hidden;
   }
 }

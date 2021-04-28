@@ -9,7 +9,6 @@
     const openPopup = (curPopup) => {
       let firstInput = curPopup.querySelector(`input`);
       let inputEmail = curPopup.querySelector(`input[type="email"]`);
-      // let storedEmail = localStorage.getItem(`user_email`);
       let isStorageSupport = true;
       let storage = ``;
 

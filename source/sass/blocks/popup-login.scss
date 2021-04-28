@@ -44,13 +44,13 @@
     min-height: 470px;
     padding: 84px 15px 25px;
   }
-}
 
-.popup-login__form {
-  padding-top: 50px;
+  form {
+    padding-top: 50px;
 
-  @media screen and (max-width: $tablet-width - 1) {
-    padding-top: 36px;
+    @media screen and (max-width: $tablet-width - 1) {
+      padding-top: 36px;
+    }
   }
 
   h2 {
@@ -65,6 +65,55 @@
       font-size: 24px;
       margin: 0 auto 18px;
     }
+  }
+
+  form + p {
+    @include reset-text;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $text-accent;
+    text-align: center;
+
+    a {
+      color: $text-main;
+
+      &:hover,
+      &:focus {
+        color: $main;
+      }
+
+      &:active {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.popup-login__forgot-pass {
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $text-accent;
+
+  &:hover,
+  &:focus {
+    color: $text-main;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.popup-login__inputs {
+  margin-bottom: 45px;
+
+  @media screen and (max-width: $tablet-width - 1) {
+    margin-bottom: 35px;
   }
 
   input {
@@ -110,33 +159,6 @@
   }
 }
 
-.popup-login__forgot-pass {
-  width: fit-content;
-  display: block;
-  margin-left: auto;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  color: $text-accent;
-
-  &:hover,
-  &:focus {
-    color: $text-main;
-  }
-
-  &:active {
-    opacity: 0.7;
-  }
-}
-
-.popup-login__inputs {
-  margin-bottom: 45px;
-
-  @media screen and (max-width: $tablet-width - 1) {
-    margin-bottom: 35px;
-  }
-}
-
 .popup-login__btn-submit {
   width: 100%;
   min-height: 68px;
@@ -159,27 +181,5 @@
   &:active {
     background: $main-active;
     opacity: 0.7;
-  }
-}
-
-.popup-login__form + p {
-  @include reset-text;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  color: $text-accent;
-  text-align: center;
-
-  a {
-    color: $text-main;
-
-    &:hover,
-    &:focus {
-      color: $main;
-    }
-
-    &:active {
-      opacity: 0.7;
-    }
   }
 }
