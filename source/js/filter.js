@@ -8,6 +8,13 @@
 
     const openFilter = () => {
       if (popupFilter) {
+        const firstBtn = popupFilter.querySelector(`button`);
+
+        if (firstBtn) {
+          setTimeout(() => {
+            firstBtn.focus();
+          }, window.consts.LOGIN_TIMEOUT);
+        }
         popupFilter.classList.add(`popup-filter--opened`);
         page.classList.add(`page--locked`);
         page.style.top = `-${window.scrollY}px`;

@@ -251,20 +251,38 @@
   }
 
   li {
-    margin-right: 27px;
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
 
-    @media screen and (max-width: $desktop-width - 1) {
-      margin-right: 23px;
+    &:nth-child(3n - 2) {
+      flex-grow: 1;
+      justify-content: flex-start;
     }
 
-    @media screen and (max-width: $tablet-width - 1) {
-      margin-right: 0;
-      width: min-content;
-      text-align: center;
+    &:nth-child(3n),
+    &:last-child {
+      flex-grow: 1;
+      justify-content: flex-end;
+
+      &::after {
+        display: none;
+      }
     }
 
-    &:last-of-type {
-      margin-right: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: $text-accent;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        height: 65%;
+      }
     }
   }
 
@@ -275,8 +293,13 @@
     line-height: 130%;
     color: $text-accent;
 
-    @media screen and (max-width: $desktop-width - 1) {
+    @media screen and (max-width: 1200px) {
       font-size: 12px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      width: min-content;
+      text-align: center;
     }
   }
 }

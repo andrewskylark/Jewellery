@@ -42,7 +42,7 @@ button {
   border-radius: 0;
 }
 // resets 1em padding left & right on IOS for buttons with no text
-button.ios_fix {
+button.ios-fix {
   padding: initial;
 }
 // ff fix, line-height should be = height of the input in ff

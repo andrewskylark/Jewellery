@@ -8,6 +8,7 @@
 
     const openPopup = (curPopup) => {
       let firstInput = curPopup.querySelector(`input`);
+      let firstLink = curPopup.querySelector(`.popup__content a`);
       let inputEmail = curPopup.querySelector(`input[type="email"]`);
       let isStorageSupport = true;
       let storage = ``;
@@ -15,6 +16,12 @@
       curPopup.classList.add(`popup--opened`);
       page.classList.add(`page--locked`);
       page.style.top = `-${window.scrollY}px`;
+
+      if (firstLink) {
+        setTimeout(() => {
+          firstLink.focus();
+        }, window.consts.LOGIN_TIMEOUT);
+      }
 
       if (firstInput) {
         setTimeout(() => {

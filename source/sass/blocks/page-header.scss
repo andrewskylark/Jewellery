@@ -125,7 +125,7 @@
   }
 
   &[href]:hover svg,
-  &[href]:hover svg {
+  &[href]:focus svg {
     transform: scale(1.1);
     stroke: $main-hover;
   }
@@ -152,17 +152,6 @@
     margin-bottom: 35px;
   }
 
-  &:hover svg,
-  &:focus svg {
-    transform: scale(1.1);
-    --icon-cart: #{$main};
-  }
-
-  &:active svg {
-    transform: scale(1.1);
-    --icon-cart: #{$main};
-  }
-
   li:not(:last-child) {
     margin-right: 38px;
   }
@@ -174,6 +163,17 @@
     color: $text-main;
     font-size: 14px;
     line-height: 21px;
+
+    &:hover svg,
+    &:focus svg {
+      transform: scale(1.1);
+      --icon-cart: #{$main};
+    }
+
+    &:active svg {
+      transform: scale(1.1);
+      --icon-cart: #{$main};
+    }
 
     &::after {
       content: "";
@@ -221,6 +221,8 @@
   @media screen and (max-width: $desktop-width - 1) {
     height: $header_top_nav_opened;
     background-color: $main;
+    box-shadow: 0 2px 12px 12px $main;
+    z-index: 100;
 
     .page-header__search {
       grid-row: 2;
@@ -251,9 +253,13 @@
       --icon-cart: white;
     }
 
-    .page-header__login:hover svg,
-    .page-header__login:focus svg {
+    .page-header__login a:hover svg,
+    .page-header__login a:focus svg {
       --icon-cart: $text-accent;
+    }
+
+    .page-header__login a:active svg {
+      opacity: 0.6;
     }
 
     .page-header__toggle {
