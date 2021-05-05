@@ -125,7 +125,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
-    color: $text-accent;
+    color: $text-main;
     border: none;
     background-color: transparent;
     border-bottom: 1px solid $text-main;
@@ -141,7 +141,6 @@
 
     &:hover,
     &:focus {
-      color: $text-accent;
       box-shadow: inset 0 -6px 10px -3px rgba($main, 0.5);
     }
 
