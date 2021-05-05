@@ -93,7 +93,14 @@
   img {
     order: 1;
     object-fit: cover;
+    height: 284px;
+    width: 270px;
     margin-bottom: 17px;
+
+    @media screen and (max-width: 1275px) {
+      height: 214px;
+      width: 210px;
+    }
 
     @media screen and (max-width: $desktop-width - 1) {
       width: 324px;

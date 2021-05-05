@@ -4,7 +4,6 @@
   position: relative;
   min-width: 320px;
   min-height: 176px;
-  max-width: $max-width;
 
   @media screen and (max-width: $desktop-width - 1) {
     min-height: 126px;

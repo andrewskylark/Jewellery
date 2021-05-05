@@ -41,8 +41,18 @@ button {
   appearance: none;
   border-radius: 0;
 }
-// resets 1em padding left & right on IOS for buttons with no text
-button.ios-fix {
+// hides spinners on safari
+input.hide-arrows::-webkit-inner-spin-button,
+input.hide-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+// hides spinners on ff
+input[type=number].hide-arrows {
+  -moz-appearance: textfield;
+}
+// resets 1em padding left & right on IOS for buttons
+input.ios-fix {
   padding: initial;
 }
 // ff fix, line-height should be = height of the input in ff

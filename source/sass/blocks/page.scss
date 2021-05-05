@@ -11,15 +11,15 @@
   grid-template-rows: auto 1fr auto;
   color: $text-main;
 
-  @media screen and (min-width: $desktop-width) {
-    max-width: $max-width;
-  }
+  // @media screen and (min-width: $desktop-width) {
+  //   max-width: $max-width;
+  // }
 
   &--locked {
     position: fixed;
     width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    // transform: translateX(-50%);
     overflow-y: hidden;
   }
 }

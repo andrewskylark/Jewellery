@@ -121,19 +121,19 @@
   position: absolute;
   left: 0;
   top: 50%;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   border: 8px solid $main;
   transform: translateY(-50%);
-  transition: border-color ease 0.4s;
+  transition: all ease 0.4s;
 }
 
 .filter__checkbox:hover + label::before,
 .filter__checkbox:hover + label::after,
 .filter__checkbox:focus + label::before,
 .filter__checkbox:focus + label::after {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   border-color: $main-hover;
 }
 
@@ -165,6 +165,7 @@
     bottom: 0;
     transform: translateX(-50%);
     display: flex;
+    align-items: baseline;
 
     &:first-of-type {
       left: 31%;

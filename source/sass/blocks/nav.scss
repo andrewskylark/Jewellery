@@ -22,7 +22,7 @@
     top: 0;
     right: 0;
     background-color: $main;
-    z-index: 5;
+    z-index: 50;
   }
 }
 
@@ -39,7 +39,7 @@
     top: $header_top_nav_opened;
     overflow-y: scroll;
     min-height: calc(100vh - #{$header_top_nav_opened});
-    z-index: 5;
+    z-index: 50;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
@@ -51,10 +51,6 @@
 .nav--closed .nav__list {
   @media screen and (max-width: $desktop-width - 1) {
     display: none;
-    // position: absolute;
-    // max-height: 100%;
-    // top: 0;
-    // right: 0;
   }
 }
 

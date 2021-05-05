@@ -117,10 +117,10 @@
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
           if (xDiff > 0) {
 
-            if (slide > 0) {
-              slide--;
+            if (slide < (slidesCount - 1)) {
+              slide++;
             } else {
-              slide = (slidesCount - 1);
+              slide = 0;
             }
 
             slider.style.transform = `translateX(-${slide * moveStep}px)`;
@@ -128,10 +128,10 @@
 
           } else {
 
-            if (slide < (slidesCount - 1)) {
-              slide++;
+            if (slide > 0) {
+              slide--;
             } else {
-              slide = 0;
+              slide = (slidesCount - 1);
             }
 
             slider.style.transform = `translateX(-${slide * moveStep}px)`;
